@@ -1,4 +1,4 @@
-package queuePackage;
+package queueAndStack;
 
 /**
  * A generic implementation of the Queue interface.
@@ -15,6 +15,7 @@ public class MyQueue<E> implements Queue<E> {
      *
      * @param capacity the maximum number of elements the queue can hold
      */
+    @SuppressWarnings("unchecked")
     public MyQueue(int capacity) {
         data = (E[]) new Object[capacity];
     }
@@ -39,6 +40,7 @@ public class MyQueue<E> implements Queue<E> {
      *
      * @param e the element to enqueue
      */
+    @SuppressWarnings("unchecked")
     public void enqueue(Object e) {
         if(size == data.length) {
             System.out.println("Queue is full.");

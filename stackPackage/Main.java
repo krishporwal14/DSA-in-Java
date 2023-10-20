@@ -1,10 +1,10 @@
+package stackPackage;
 import java.util.Scanner;
-
-import stackPackage.MyStack;
 /**
  * A simple program to interact with the MyStack class. This class implements all the applications of the `Stack` Interface.
  */
-public class StackTest {
+@SuppressWarnings("rawtypes")
+public class Main {
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
         String choice = "y", menu_option, type_choice;

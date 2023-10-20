@@ -1,10 +1,10 @@
+package queuePackage;
 import java.util.Scanner;
-
-import queuePackage.MyQueue;
 /**
  * The main class that provides a menu-driven interface to interact with the queue. This class implements all the applications of the `Queue` interface.
  */
-public class QueueTest {
+@SuppressWarnings("rawtypes")
+public class Main {
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
         String choice = "y", menu_option, type_choice;

@@ -13,6 +13,7 @@ public class MyStack<E> implements Stack<E> {
      *
      * @param capacity The capacity of the stack.
      */
+    @SuppressWarnings("unchecked")
     public MyStack(int capacity) {
         data = (E[]) new Object[capacity];
     }
@@ -37,6 +38,7 @@ public class MyStack<E> implements Stack<E> {
      *
      * @param e The element to be pushed onto the stack.
      */
+    @SuppressWarnings("unchecked")
     public void push(Object e){
         if(size() == data.length) {
             System.out.println("Stack is full.");

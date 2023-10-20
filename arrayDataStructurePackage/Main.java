@@ -1,26 +1,27 @@
+package arrayDataStructurePackage;
 import java.util.Scanner;
 
-import arrayDataStructurePackage.MyLongArray;
+
 /** 
  * This class creates an object of MyLongArray Class and uses the various methods of the class. 
 */
-public class ArrayTest {
+public class Main {
     /** 
      * Main Method initializes and uses the attributes and methods of MyLongArray Class based on user input which is implemented using switch case, scanner, etc. This method also implements a do-while loop which iterates based on user input. 
     */
     public static void main(String args[]) { 
         Scanner scan = new Scanner(System.in);
-        MyLongArray arr; 
+        MyLongArray1 arr; 
         String menu_option; 
         String choice = "y"; 
         System.out.println("******************************************************");
         System.out.println("Enter the size of array: ");
         try {
-            arr = new MyLongArray(Integer.parseInt(scan.nextLine()));
+            arr = new MyLongArray1(Integer.parseInt(scan.nextLine()));
         }
         catch(Exception e) {
             System.out.println("Enter a numerical value only.");
-            arr = new MyLongArray(Integer.parseInt(scan.nextLine()));
+            arr = new MyLongArray1(Integer.parseInt(scan.nextLine()));
         }
         System.out.println("Array initialized."); 
         System.out.println("******************************************************");

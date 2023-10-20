@@ -1,13 +1,16 @@
+package queueAndStack;
 import java.util.Scanner;
 
-import queueAndStack.*;
+
 /**
  * A simple program to interact with the MyStack and MyQueue class. This class implements all the applications of the `Stack` and `Queue` Interface.
  */
-public class QueueAndStackTest {
+
+public class Main {
+    @SuppressWarnings("rawtypes")
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        String structure_choice, choice = "y", menu_option, type_choice;
+        String structure_choice, choice = "y", menu_option, type_choice;  
         MyStack stack;
         MyQueue queue;
         int capacity;
