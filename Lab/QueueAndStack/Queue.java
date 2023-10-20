@@ -1,4 +1,4 @@
-package QueueAndStack;
+package queueAndStack;
 /**
  * A generic interface for a Queue data structure. The interface `Queue` has the methods size(), isEmpty(), enqueue(), first(), and dequeue().
  * @param <E> the type of elements stored in the queue

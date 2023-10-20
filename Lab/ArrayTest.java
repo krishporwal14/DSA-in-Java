@@ -1,5 +1,6 @@
-import ArrayDataStructurePackage.MyLongArray;
 import java.util.Scanner;
+
+import arrayDataStructurePackage.MyLongArray;
 /** 
  * This class creates an object of MyLongArray Class and uses the various methods of the class. 
 */

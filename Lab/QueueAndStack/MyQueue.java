@@ -1,4 +1,4 @@
-package QueueAndStack;
+package queueAndStack;
 
 /**
  * A generic implementation of the Queue interface.

@@ -1,4 +1,4 @@
-package QueuePackage;
+package queuePackage;
 
 /**
  * A generic implementation of the Queue interface.

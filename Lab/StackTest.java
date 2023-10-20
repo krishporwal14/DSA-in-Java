@@ -1,5 +1,6 @@
-import StackPackage.MyStack;
 import java.util.Scanner;
+
+import stackPackage.MyStack;
 /**
  * A simple program to interact with the MyStack class. This class implements all the applications of the `Stack` Interface.
  */

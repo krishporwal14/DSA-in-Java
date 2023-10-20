@@ -1,4 +1,4 @@
-package QueueAndStack;
+package queueAndStack;
 
 /**
  * This program uses interface `Stack` with mwthods size(), isEmpty(), push(), top(), and pop() to implement stack based on array using Generic classes.

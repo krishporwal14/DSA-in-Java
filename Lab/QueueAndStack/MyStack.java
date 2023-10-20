@@ -1,4 +1,4 @@
-package QueueAndStack;
+package queueAndStack;
 
 /**
  * A generic class that implements the Stack interface.

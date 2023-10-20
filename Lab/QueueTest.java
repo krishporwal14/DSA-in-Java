@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import QueuePackage.MyQueue;
+
+import queuePackage.MyQueue;
 /**
  * The main class that provides a menu-driven interface to interact with the queue. This class implements all the applications of the `Queue` interface.
  */

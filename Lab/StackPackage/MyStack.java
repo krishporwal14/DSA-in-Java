@@ -1,4 +1,4 @@
-package StackPackage;
+package stackPackage;
 
 /**
  * A generic class that implements the Stack interface.
