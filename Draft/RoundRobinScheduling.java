@@ -60,6 +60,7 @@ class Process {
 public class RoundRobinScheduling {
     /**
      * Main method which inputs processes from user andpushes them onto queue to implement round robin scheduling
+     * @param args
      */
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
