@@ -1,4 +1,4 @@
-package SortingArray;
+package sortingArray;
 
 public class Sorting extends MyLongArray1 {
     public Sorting(int size) {

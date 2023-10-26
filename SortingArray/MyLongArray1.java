@@ -1,4 +1,4 @@
-package SortingArray;
+package sortingArray;
 import java.util.Random;
 /**
  * This class is MyLongArray1 with attributes a, currentIndex and methods find(), insert(), getElem(), delete(), dupDelete(), display(), insert(), deleteAt(), initArray(), bubbleSort(), selectionSort(), insertionSort().

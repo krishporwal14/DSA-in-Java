@@ -1,4 +1,4 @@
-package SortingArray;
+package sortingArray;
 
 
 /** 
