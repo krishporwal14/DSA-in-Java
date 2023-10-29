@@ -53,8 +53,8 @@ public class Main {
                 case "5":
                     System.out.println("********************************************");
                     System.out.println("Enter a position: ");
-                    // Position<Integer> p = (Position<Integer>) scan.nextLine();
-                    // System.out.println("Position of List before " + p + " is: " + list.before(p);
+                    // String pos = scan.next();
+                    // System.out.println("Position of List before " + pos + " is: " + list.before((Position<Integer>) pos));
                     System.out.println("********************************************");
                     break;
                 case "6":
