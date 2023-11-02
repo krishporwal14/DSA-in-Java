@@ -131,7 +131,7 @@ public class PositionalLinkedList<E> implements PositionalList<E> {
      * @return The last position of the list
      */
     public Position<E> last() {
-        return position(trailer.getNext());
+        return position(trailer.getPrev());
     }
     /**
      * @param p Position in the list
@@ -284,5 +284,14 @@ public class PositionalLinkedList<E> implements PositionalList<E> {
         public boolean hasNext() { return posIterator.hasNext(); }
         public E next() { return posIterator.next().getElement(); }
         public void remove() { posIterator.remove(); }
+    }
+    /**
+     * Displays all the elements of the list.
+     */
+    public void display() {
+        ElementIterator i = new ElementIterator();
+        while(i.hasNext()) {
+            System.out.println(i.next());
+        }
     }
 }
