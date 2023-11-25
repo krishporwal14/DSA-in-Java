@@ -13,7 +13,7 @@ public class BinaryTree<E> {
     /**
      * Nested class to represent a single node element of the tree.
      */
-    protected static class Node<E> implements Position<E> {
+    public static class Node<E> implements Position<E> {
         /** Data stored in the node. */
         private E element;
         /** Parent of the node. */
@@ -472,7 +472,6 @@ public class BinaryTree<E> {
     public void postorderTraversal() {
         postorderTraversal(root);
     }
-
     private void postorderTraversal(Node<E> node) {
         if (node != null) {
             postorderTraversal(node.getLeft());
