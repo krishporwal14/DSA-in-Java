@@ -2,8 +2,21 @@ package positionalListPackage;
 
 import java.util.Scanner;
 
+/**
+ * @author Krish Porwal
+ * @since 28-10-2023
+ * @version 1.0.0
+ */
+/**
+ * Class to test all the operations of the Positional Doubly Linked List.
+ */
 public class Main {
-
+    /**
+     * Private method to find a position of given element.
+     * @param list Collection
+     * @param element Element to find position of
+     * @return Position of the 
+     */
     private static Position<Integer> findPosition(PositionalLinkedList<Integer> list, int element) {
         Position<Integer> currentPosition = list.first();
         while (currentPosition != null) {
@@ -14,10 +27,14 @@ public class Main {
         }
         return null;
     }
-
+    /**
+     * Main Method to implement all operations of Positional Doubly Linked List.
+     * @param args
+     */
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
         String choice = "y", menu_choice;
+        int data, beforeElement, afterElement, aElement, bElement, be, ae, replaceElement, setElement, removeElement;
         PositionalLinkedList<Integer> list = new PositionalLinkedList<>();
         do {
             System.out.println("********************Menu********************");
@@ -65,8 +82,14 @@ public class Main {
                     break;
                 case "5":
                     System.out.println("********************************************");
-                    System.out.println("Enter a element in the list: ");
-                    int beforeElement = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter a element in the list: ");
+                        beforeElement = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter a element in the list: ");
+                        beforeElement = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, beforeElement) != null) {
                         System.out.println("Position before element is: " + list.before((Position<Integer>) findPosition(list, beforeElement)));
                     }
@@ -77,8 +100,14 @@ public class Main {
                     break;
                 case "6":
                     System.out.println("********************************************");
-                    System.out.println("Enter a element in the list: ");
-                    int afterElement = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter a element in the list: ");
+                        afterElement = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter a element in the list: ");
+                        afterElement = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, afterElement) != null) {
                         System.out.println("Position after element is: " + list.after((Position<Integer>) findPosition(list, afterElement)));
                     }
@@ -89,24 +118,44 @@ public class Main {
                     break;
                 case "7":
                     System.out.println("********************************************");
-                    System.out.println("Enter the element to insert: ");
-                    int data = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element to insert: ");
+                        data = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element to insert: ");
+                        data = Integer.parseInt(scan.nextLine());
+                    }
                     System.out.println(data + " inserted in " + list.addFirst(data) + " position.");
                     System.out.println("********************************************");
                     break;
                 case "8":
                     System.out.println("********************************************");
-                    System.out.println("Enter the element to insert: ");
-                    data = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element to insert: ");
+                        data = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element to inser: ");
+                        data = Integer.parseInt(scan.nextLine());
+                    }
                     System.out.println(data + " inserted in " + list.addLast(data) + " position.");
                     System.out.println("********************************************");
                     break;
                 case "9":
                     System.out.println("********************************************");
-                    System.out.println("Enter the a element in the list: ");
-                    int bElement = Integer.parseInt(scan.nextLine());
-                    System.out.println("Enter the element to insert: ");
-                    int be = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element in the list: ");
+                        bElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        be = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element in the list: ");
+                        bElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        be = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, bElement) != null) {
                         list.addBefore((Position<Integer>) findPosition(list, bElement), be);
                         System.out.println(be + " inserted");
@@ -118,10 +167,18 @@ public class Main {
                     break;
                 case "10":
                     System.out.println("********************************************");
-                    System.out.println("Enter the element in the list: ");
-                    int aElement = Integer.parseInt(scan.nextLine());
-                    System.out.println("Enter the element to insert: ");
-                    int ae = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element in the list: ");
+                        aElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        ae = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element in the list: ");
+                        aElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        ae = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, aElement) != null) {
                         list.addAfter((Position<Integer>) findPosition(list, aElement), ae);
                         System.out.println(ae + " inserted");   
@@ -133,10 +190,18 @@ public class Main {
                     break;
                 case "11":
                     System.out.println("********************************************");
-                    System.out.println("Enter the element you want to replace: ");
-                    int replaceElement = Integer.parseInt(scan.nextLine());
-                    System.out.println("Enter the element to insert: ");
-                    int setElement = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element you want to replace: ");
+                        replaceElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        setElement = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element you want to replace: ");
+                        replaceElement = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter the element to insert: ");
+                        setElement = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, replaceElement) != null) {
                         list.set((Position<Integer>) findPosition(list, replaceElement), setElement);
                         System.out.println("Replaced.");
@@ -148,8 +213,14 @@ public class Main {
                     break;
                 case "12":
                     System.out.println("********************************************");
-                    System.out.println("Enter the element in the list to remove: ");
-                    int removeElement = Integer.parseInt(scan.nextLine());
+                    try {
+                        System.out.println("Enter the element in the list to remove: ");
+                        removeElement = Integer.parseInt(scan.nextLine());
+                    }
+                    catch(Exception e) {
+                        System.out.println("Enter the element in the list to remove: ");
+                        removeElement = Integer.parseInt(scan.nextLine());
+                    }
                     if(findPosition(list, removeElement) != null) {
                         System.out.println(list.remove((Position<Integer>) findPosition(list, removeElement)) + " removed.");
                     }

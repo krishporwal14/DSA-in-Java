@@ -1,3 +1,4 @@
+package Drafts;
 class DecreasingRecursion {
     static void printNum(int num) {
         System.out.println(num);

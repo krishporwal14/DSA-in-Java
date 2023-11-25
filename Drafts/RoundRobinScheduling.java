@@ -1,3 +1,4 @@
+package Drafts;
 import queueAndStack.MyQueue;
 
 import java.util.Scanner;
