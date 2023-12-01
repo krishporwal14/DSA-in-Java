@@ -51,7 +51,7 @@ public class DirectoryExplorer {
             if (type == 0) {
                 return String.format("%8d bytes\t%s\t%s", size, dateInFormat, name);
             } else {
-                return String.format("<DIR>\t%s\t\t%s", dateInFormat, name);
+                return String.format("\t<DIR>\t%s\t\t%s", dateInFormat, name);
             }
         }
     }

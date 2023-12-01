@@ -116,7 +116,7 @@ public class BinaryTree<E> {
     }
 
     // Class fields
-    protected Node<E> root = null;
+    public Node<E> root = null;
     private int size = 0;
 
     // Class methods
@@ -427,6 +427,8 @@ public class BinaryTree<E> {
         }
     }
 
+
+
     /**
      * Performs a preorder traversal of the tree and returns a list of elements.
      *
@@ -465,6 +467,41 @@ public class BinaryTree<E> {
         }
         return result;
     }
+
+    
+
+    private boolean isOperator(E element) {
+        return element.equals("+") || element.equals("-") || element.equals("*") || element.equals("/");
+    }
+    
+    /**
+     * Performs an inorder traversal of the tree and returns a list of elements.
+     *
+     * @return List of elements obtained through inorder traversal
+     */
+    public List<E> inorderTraversalWithBrackets() {
+        List<E> result = new ArrayList<>();
+        inorderTraversalWithBrackets(root, result);
+        return result;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void inorderTraversalWithBrackets(Node<E> node, List<E> result) {
+        if (node != null) {
+            E element = node.getElement();
+            boolean isOperator = isOperator(element);
+            if (isOperator) {
+                result.add((E) "(");
+            }
+            inorderTraversalWithBrackets(node.getLeft(), result);
+            result.add(element);
+            inorderTraversalWithBrackets(node.getRight(), result);
+            if (isOperator) {
+                result.add((E) ")");
+            }
+        }
+    }
+
 
     /**
      * Performs a postorder traversal of the tree and prints the elements.
