@@ -11,22 +11,7 @@ import java.util.Scanner;
  * Class to test all the operations of the Positional Doubly Linked List.
  */
 public class Main {
-    /**
-     * Private method to find a position of given element.
-     * @param list Collection
-     * @param element Element to find position of
-     * @return Position of the 
-     */
-    private static Position<Integer> findPosition(PositionalLinkedList<Integer> list, int element) {
-        Position<Integer> currentPosition = list.first();
-        while (currentPosition != null) {
-            if (currentPosition.getElement() == element) {
-                return currentPosition;
-            }
-            currentPosition = list.after(currentPosition);
-        }
-        return null;
-    }
+    
     /**
      * Main Method to implement all operations of Positional Doubly Linked List.
      * @param args
@@ -90,8 +75,8 @@ public class Main {
                         System.out.println("Enter a element in the list: ");
                         beforeElement = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, beforeElement) != null) {
-                        System.out.println("Position before element is: " + list.before((Position<Integer>) findPosition(list, beforeElement)));
+                    if(list.findPosition(list, beforeElement) != null) {
+                        System.out.println("Position before element is: " + list.before((Position<Integer>) list.findPosition(list, beforeElement)));
                     }
                     else {
                         System.out.println("No such element.");
@@ -108,8 +93,8 @@ public class Main {
                         System.out.println("Enter a element in the list: ");
                         afterElement = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, afterElement) != null) {
-                        System.out.println("Position after element is: " + list.after((Position<Integer>) findPosition(list, afterElement)));
+                    if(list.findPosition(list, afterElement) != null) {
+                        System.out.println("Position after element is: " + list.after((Position<Integer>) list.findPosition(list, afterElement)));
                     }
                     else {
                         System.out.println("No such element.");
@@ -156,8 +141,8 @@ public class Main {
                         System.out.println("Enter the element to insert: ");
                         be = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, bElement) != null) {
-                        list.addBefore((Position<Integer>) findPosition(list, bElement), be);
+                    if(list.findPosition(list, bElement) != null) {
+                        list.addBefore((Position<Integer>) list.findPosition(list, bElement), be);
                         System.out.println(be + " inserted");
                     }
                     else {
@@ -179,8 +164,8 @@ public class Main {
                         System.out.println("Enter the element to insert: ");
                         ae = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, aElement) != null) {
-                        list.addAfter((Position<Integer>) findPosition(list, aElement), ae);
+                    if(list.findPosition(list, aElement) != null) {
+                        list.addAfter((Position<Integer>) list.findPosition(list, aElement), ae);
                         System.out.println(ae + " inserted");   
                     }
                     else {
@@ -202,8 +187,8 @@ public class Main {
                         System.out.println("Enter the element to insert: ");
                         setElement = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, replaceElement) != null) {
-                        list.set((Position<Integer>) findPosition(list, replaceElement), setElement);
+                    if(list.findPosition(list, replaceElement) != null) {
+                        list.set((Position<Integer>) list.findPosition(list, replaceElement), setElement);
                         System.out.println("Replaced.");
                     }
                     else {
@@ -221,8 +206,8 @@ public class Main {
                         System.out.println("Enter the element in the list to remove: ");
                         removeElement = Integer.parseInt(scan.nextLine());
                     }
-                    if(findPosition(list, removeElement) != null) {
-                        System.out.println(list.remove((Position<Integer>) findPosition(list, removeElement)) + " removed.");
+                    if(list.findPosition(list, removeElement) != null) {
+                        System.out.println(list.remove((Position<Integer>) list.findPosition(list, removeElement)) + " removed.");
                     }
                     else {
                         System.out.println("No such element.");

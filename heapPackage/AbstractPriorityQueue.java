@@ -6,7 +6,7 @@ import java.util.Comparator;
  * @param <K> The key type.
  * @param <V> The value type.
  */
-public class AbstractPriorityQueue<K, V> implements PriorityQueue<K, V> {
+public abstract class AbstractPriorityQueue<K, V> implements PriorityQueue<K, V> {
 
     /**
      * Inner class representing an entry in the priority queue.
@@ -117,48 +117,5 @@ public class AbstractPriorityQueue<K, V> implements PriorityQueue<K, V> {
      */
     public boolean isEmpty() {
         return size() == 0;
-    }
-
-    /**
-     * Retrieves the number of elements in the priority queue.
-     *
-     * @return The number of elements in the priority queue.
-     * @throws UnsupportedOperationException If the method is not implemented.
-     */
-    public int size() {
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
-    }
-
-    /**
-     * Inserts a new entry with the given key and value into the priority queue.
-     *
-     * @param key   The key of the new entry.
-     * @param value The value of the new entry.
-     * @return The new entry.
-     * @throws IllegalArgumentException If the key is not compatible.
-     * @throws UnsupportedOperationException If the method is not implemented.
-     */
-    public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Unimplemented method 'insert'");
-    }
-
-    /**
-     * Retrieves the entry with the minimum key in the priority queue.
-     *
-     * @return The entry with the minimum key.
-     * @throws UnsupportedOperationException If the method is not implemented.
-     */
-    public Entry<K, V> min() {
-        throw new UnsupportedOperationException("Unimplemented method 'min'");
-    }
-
-    /**
-     * Removes and returns the entry with the minimum key from the priority queue.
-     *
-     * @return The entry with the minimum key.
-     * @throws UnsupportedOperationException If the method is not implemented.
-     */
-    public Entry<K, V> removeMin() {
-        throw new UnsupportedOperationException("Unimplemented method 'removeMin'");
     }
 }

@@ -1,43 +1,38 @@
+package Drafts;
+
+import hashMapPackage.*;
+import java.util.Iterator;
 import java.util.Scanner;
 
-/**
- * A test application to check all the operations of priority queue implemented
- * using heap data structure.
- */
-public class Main {
-    /**
-     * Main method of the program.
-     * 
-     * @param args
-     */
+public class ProbeHashMapTest {
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        HeapPriorityQueue<Integer, String> queue = new HeapPriorityQueue<>();
+        ProbeHashMap<Integer, String> map = new ProbeHashMap<>();
         String choice = "y", menu_choice;
         do {
             System.out.println("*************************Menu*************************");
             System.out.println("1. Size");
             System.out.println("2. Is Empty");
-            System.out.println("3. Insert");
-            System.out.println("4. Minimum");
-            System.out.println("5. Remove Minimum");
-            System.out.println("6. Display Queue");
+            System.out.println("3. Get");
+            System.out.println("4. Put");
+            System.out.println("5. Remove");
+            System.out.println("6. Display");
             System.out.println("******************************************************");
             System.out.println("Enter your choice: ");
             menu_choice = scan.nextLine();
             switch (menu_choice) {
                 case "1":
                     System.out.println("******************************************************");
-                    System.out.println("Size of the priority queue is: " + queue.size());
+                    System.out.println("Size of the map is: " + map.size());
                     System.out.println("******************************************************");
                     break;
 
                 case "2":
                     System.out.println("******************************************************");
-                    if (queue.isEmpty()) {
-                        System.out.println("Priority Queue is empty.");
+                    if (map.isEmpty()) {
+                        System.out.println("Map is empty.");
                     } else {
-                        System.out.println("Priority Queue is not empty.");
+                        System.out.println("Map is not empty.");
                     }
                     System.out.println("******************************************************");
                     break;
@@ -45,38 +40,62 @@ public class Main {
                 case "3":
                     System.out.println("******************************************************");
                     try {
-                        System.out.println("Enter priority: ");
-                        int priority = Integer.parseInt(scan.nextLine());
-                        System.out.println("Enter value: ");
-                        String value = scan.nextLine();
-                        queue.insert(priority, value);
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println(map.get(key));
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e);
                         System.out.println("Try again!!");
-                        System.out.println("Enter priority: ");
-                        int priority = Integer.parseInt(scan.nextLine());
-                        System.out.println("Enter value: ");
-                        String value = scan.nextLine();
-                        queue.insert(priority, value);
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println(map.get(key));
                     }
                     System.out.println("******************************************************");
                     break;
 
                 case "4":
                     System.out.println("******************************************************");
-                    System.out.println("Minimum of the Priority Queue is: " + queue.min().getValue());
+                    try {
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter value: ");
+                        String value = scan.nextLine();
+                        System.out.println(map.put(key, value));
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e);
+                        System.out.println("Try again!!");
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println("Enter value: ");
+                        String value = scan.nextLine();
+                        System.out.println(map.put(key, value));
+                    }
                     System.out.println("******************************************************");
                     break;
 
                 case "5":
                     System.out.println("******************************************************");
-                    System.out.println("Element removed is: " + queue.removeMin().getValue());
+                    try {
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println("Element removed is: " + map.remove(key));
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e);
+                        System.out.println("Try again!!");
+                        System.out.println("Enter key: ");
+                        int key = Integer.parseInt(scan.nextLine());
+                        System.out.println("Element removed is: " + map.remove(key));
+                    }
                     System.out.println("******************************************************");
                     break;
 
                 case "6":
                     System.out.println("******************************************************");
-                    queue.displayQueue();
+                    Iterable<Entry<Integer, String>> iterable = map.entrySet();
+                    Iterator<Entry<Integer, String>> iterator = iterable.iterator();
+                    while(iterator.hasNext()) {
+                        System.out.println(iterator.next().getKey() + " : " + iterator.next().getValue());
+                    }
                     System.out.println("******************************************************");
                     break;
 

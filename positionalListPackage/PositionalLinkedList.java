@@ -286,6 +286,21 @@ public class PositionalLinkedList<E> implements PositionalList<E> {
         public void remove() { posIterator.remove(); }
     }
     /**
+     * Private class which implements the `Iterable` interface
+     */
+    private class ElementIterable implements Iterable<E> {
+        public Iterator<E> iterator() {
+            return new ElementIterator();
+        }
+    }
+    /**
+     * Creates and returns an iterator for the list
+     * @return An object of `ElementIterable` class
+     */
+    public Iterable<E> elements() {
+        return new ElementIterable();
+    }
+    /**
      * Displays all the elements of the list.
      */
     public void display() {
@@ -293,5 +308,21 @@ public class PositionalLinkedList<E> implements PositionalList<E> {
         while(i.hasNext()) {
             System.out.println(i.next());
         }
+    }
+    /**
+     * Public method to find a position of given element.
+     * @param list Collection
+     * @param element Element to find position of
+     * @return Position of the 
+     */
+    public Position<E> findPosition(PositionalLinkedList<E> list, E element) {
+        Position<E> currentPosition = list.first();
+        while (currentPosition != null) {
+            if (currentPosition.getElement() == element) {
+                return currentPosition;
+            }
+            currentPosition = list.after(currentPosition);
+        }
+        return null;
     }
 }
