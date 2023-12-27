@@ -2,10 +2,17 @@ package graphPackage;
 
 import java.util.Scanner;
 
+/**
+ * Program to test all Graph operations.
+ */
 public class Main {
+    /**
+     * Main method for the program.
+     * @param args
+     */
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        EdgeListGraph<Integer, Integer> graph = new EdgeListGraph<>();
+        AdjacencyMapGraph<Integer, Integer> graph = new AdjacencyMapGraph<>(true);
         String choice = "y", menu_choice;
         do {
             System.out.println("*************************Menu*************************");
